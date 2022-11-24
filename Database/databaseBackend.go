@@ -1,4 +1,4 @@
-package main
+package Database
 
 import (
 	"gorm.io/driver/mysql"
@@ -12,4 +12,12 @@ func InitDatabase() error {
 	}
 	db.AutoMigrate()
 	return nil
+}
+
+func OpenDatabase() (*gorm.DB, error) {
+	db, err := gorm.Open(mysql.Open("backendGolang"), &gorm.Config{})
+	if err != nil {
+		return db, err
+	}
+	return db, nil
 }
