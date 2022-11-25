@@ -1,22 +1,13 @@
 package Imagen
 
-import (
-	"gorm.io/gorm"
-	"image"
-	"os"
-)
-
 type ImagenStruct struct {
-	gorm.Model
-	Archivo    *os.File    `json:"archivo"`
-	Tipo       string      `json:"tipo"`
-	ImagenFile image.Image `json:"imagenFile"`
+	resultado []float64
 }
 
-func (t *ImagenStruct) Imagen() image.Image {
-	return t.ImagenFile
+func (i *ImagenStruct) Resultado() []float64 {
+	return i.resultado
 }
 
-func (t *ImagenStruct) SetImagen(imagen image.Image) {
-	t.ImagenFile = imagen
+func (i *ImagenStruct) SetResultado(resultado []float64) {
+	i.resultado = resultado
 }

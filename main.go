@@ -1,12 +1,12 @@
 package main
 
 import (
-	"github.com/Oriel-Barroso/golangBackend/Imagen"
+	routes "github.com/Oriel-Barroso/golangBackend/Routes"
 	"github.com/gofiber/fiber/v2"
 )
 
 func main() {
 	app := fiber.New()
-	Imagen.SetupRoutes(app)
+	routes.SetupRoutes(app)
 	app.Listen(":3000")
 }
